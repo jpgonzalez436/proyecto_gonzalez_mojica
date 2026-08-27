@@ -86,8 +86,4 @@ proyecto/
 
 ---
 
-<div align="center">
 
-Hecho con ❤️ usando Git y GitHub.
-
-</div>
