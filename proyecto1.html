@@ -1,555 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NEXUS LAB | Diego Mojica & Juan Gonzales</title>
+<title>Nexus Lab | Portafolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-
-font-family:"Space Grotesk",sans-serif;
-background:#050816;
-color:white;
-overflow-x:hidden;
-
-}
-
-/*--------------------*/
-/* Fondo Tecnológico */
-/*--------------------*/
-
-.hero{
-
-position:relative;
-min-height:100vh;
-padding:35px 70px;
-overflow:hidden;
-
-background:
-radial-gradient(circle at top left,#123d72 0%,transparent 35%),
-radial-gradient(circle at bottom right,#0b2f5c 0%,transparent 40%),
-#050816;
-
-}
-
-/* Cuadrícula */
-
-.hero::before{
-
-content:"";
-position:absolute;
-inset:0;
-
-background-image:
-linear-gradient(rgba(56,232,255,.05) 1px,transparent 1px),
-linear-gradient(90deg,rgba(56,232,255,.05) 1px,transparent 1px);
-
-background-size:60px 60px;
-
-mask-image:linear-gradient(to bottom,black 60%,transparent);
-
-}
-
-/* Líneas decorativas */
-
-.hero::after{
-
-content:"";
-position:absolute;
-width:600px;
-height:600px;
-
-border:1px solid rgba(56,232,255,.08);
-
-border-radius:50%;
-
-top:-260px;
-right:-180px;
-
-transform:rotate(18deg);
-
-}
-
-/*--------------------*/
-/* Navbar */
-/*--------------------*/
-
-.navbar{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:relative;
-z-index:5;
-
-}
-
-.logo{
-
-display:flex;
-align-items:center;
-gap:15px;
-
-}
-
-/* REEMPLAZAR LOGO */
-
-.logo-box{
-
-width:54px;
-height:54px;
-
-border:2px solid #38E8FF;
-border-radius:14px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-weight:bold;
-font-size:22px;
-color:#38E8FF;
-
-}
-
-.logo-text{
-
-display:flex;
-flex-direction:column;
-
-}
-
-.logo-text span:first-child{
-
-font-size:15px;
-letter-spacing:2px;
-color:#38E8FF;
-
-}
-
-.logo-text span:last-child{
-
-font-size:13px;
-color:#94A3B8;
-
-}
-
-.contact-btn{
-
-padding:14px 26px;
-
-border:1px solid #38E8FF;
-border-radius:12px;
-
-text-decoration:none;
-color:white;
-
-transition:.3s;
-
-}
-
-.contact-btn:hover{
-
-background:#38E8FF;
-color:#050816;
-box-shadow:0 0 25px rgba(56,232,255,.35);
-
-}
-
-/*--------------------*/
-/* Hero */
-/*--------------------*/
-
-.hero-content{
-
-position:relative;
-z-index:5;
-
-margin-top:90px;
-
-max-width:900px;
-
-}
-
-.label{
-
-display:inline-flex;
-align-items:center;
-gap:10px;
-
-padding:10px 18px;
-
-background:rgba(56,232,255,.08);
-border:1px solid rgba(56,232,255,.25);
-border-radius:999px;
-
-color:#38E8FF;
-font-size:14px;
-
-margin-bottom:35px;
-
-}
-
-.label::before{
-
-content:"";
-width:8px;
-height:8px;
-
-background:#38E8FF;
-border-radius:50%;
-
-box-shadow:0 0 12px #38E8FF;
-
-}
-
-.hero h1{
-
-font-size:clamp(5rem,11vw,9rem);
-
-line-height:.88;
-font-weight:700;
-
-}
-
-.second{
-
-color:#38E8FF;
-
-}
-
-.subtitle{
-
-margin-top:35px;
-
-font-size:1.4rem;
-color:#94A3B8;
-
-max-width:720px;
-line-height:1.7;
-
-}
-
-.buttons{
-
-margin-top:50px;
-
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-
-}
-
-.primary{
-
-background:linear-gradient(135deg,#2563EB,#38E8FF);
-
-padding:18px 34px;
-
-border-radius:14px;
-
-text-decoration:none;
-color:white;
-font-weight:bold;
-
-transition:.3s;
-
-}
-
-.primary:hover{
-
-transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(37,99,235,.35);
-
-}
-
-.secondary{
-
-border:1px solid #38E8FF;
-
-padding:18px 34px;
-
-border-radius:14px;
-
-text-decoration:none;
-color:white;
-
-transition:.3s;
-
-}
-
-.secondary:hover{
-
-background:rgba(56,232,255,.08);
-
-}
-
-/*--------------------*/
-/* Panel derecho */
-/*--------------------*/
-
-.side-panel{
-
-position:absolute;
-
-right:70px;
-bottom:70px;
-
-width:270px;
-
-padding:25px;
-
-background:rgba(11,18,37,.75);
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(56,232,255,.18);
-border-radius:20px;
-
-z-index:5;
-
-}
-
-.side-panel h3{
-
-font-size:16px;
-margin-bottom:20px;
-color:#38E8FF;
-
-}
-
-.member{
-
-display:flex;
-align-items:center;
-gap:15px;
-
-margin-bottom:18px;
-
-}
-
-/* REEMPLAZAR FOTOS */
-
-.avatar{
-
-width:50px;
-height:50px;
-
-border-radius:12px;
-
-border:1px dashed #38E8FF;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:12px;
-color:#38E8FF;
-
-}
-
-.member small{
-
-color:#94A3B8;
-
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-.hero{
-
-padding:30px;
-
-}
-
-.side-panel{
-
-position:relative;
-
-right:auto;
-bottom:auto;
-
-width:100%;
-
-margin-top:50px;
-
-}
-
-.hero-content{
-
-margin-top:60px;
-
-}
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:linear-gradient(135deg,#081120,#102542);color:#fff}
+header{display:flex;justify-content:space-between;align-items:center;padding:25px 8%}
+.logo{font-size:24px;font-weight:700;color:#4fd1ff}
+.btn{padding:10px 18px;border:1px solid #4fd1ff;border-radius:8px;color:#fff;text-decoration:none}
+.hero{display:grid;grid-template-columns:2fr 1fr;align-items:center;min-height:85vh;padding:0 8%;gap:40px}
+.hero h1{font-size:clamp(3rem,8vw,6rem);line-height:.9}
+.hero h1:last-of-type{color:#4fd1ff}
+.hero p{margin:20px 0;color:#cbd5e1}
+.botones{display:flex;gap:15px}
+.principal{background:#2563eb;padding:12px 22px;border-radius:8px;color:#fff;text-decoration:none}
+.secundario{border:1px solid #4fd1ff;padding:12px 22px;border-radius:8px;color:#fff;text-decoration:none}
+.panel{background:rgba(255,255,255,.05);padding:25px;border-radius:15px;border:1px solid rgba(79,209,255,.3)}
+.miembro{display:flex;align-items:center;gap:15px;margin:20px 0}
+.foto{width:55px;height:55px;border:2px dashed #4fd1ff;border-radius:10px;display:flex;justify-content:center;align-items:center;font-size:12px;color:#4fd1ff}
+@media(max-width:768px){.hero{grid-template-columns:1fr;padding:40px 8%}}
 </style>
-
 </head>
 
 <body>
 
+<header>
+
+    <!-- REEMPLAZAR LOGO -->
+    <div class="logo">NEXUS LAB</div>
+
+    <!-- REEMPLAZAR LINK CONTACTO -->
+    <a href="#contacto" class="btn">Contacto</a>
+
+</header>
+
 <section class="hero">
 
-<nav class="navbar">
+    <div>
 
-<div class="logo">
+        <small>Equipo de Ingeniería Mecatrónica</small>
 
-<div class="logo-box">
+        <h1>Diego Mojica</h1>
 
-DJ
+        <h1>Juan Gonzales</h1>
 
-</div>
+        <p>
+            Diseñamos proyectos que integran automatización, programación, robótica y tecnología para la Industria 4.0.
+        </p>
 
-<div class="logo-text">
+        <div class="botones">
 
-<span>NEXUS LAB</span>
+            <a href="#proyectos" class="principal">Ver proyectos</a>
 
-<span>Mechatronics Portfolio</span>
+            <!-- REEMPLAZAR LINK DEL CV -->
+            <a href="#" class="secundario">Descargar CV</a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<!-- REEMPLAZAR LINK CONTACTO -->
+    <div class="panel">
 
-<a href="#contacto" class="contact-btn">
+        <h3>Equipo</h3>
 
-Conversemos
+        <div class="miembro">
 
-</a>
+            <div class="foto">
+                FOTO
+            </div>
 
-</nav>
+            <div>
+                <strong>Diego Mojica</strong><br>
+                <small>Mecatrónica</small>
+            </div>
 
-<div class="hero-content">
+        </div>
 
-<div class="label">
+        <div class="miembro">
 
-Equipo de Ingeniería Mecatrónica
+            <div class="foto">
+                FOTO
+            </div>
 
-</div>
+            <div>
+                <strong>Juan Gonzales</strong><br>
+                <small>Mecatrónica</small>
+            </div>
 
-<p style="font-size:26px;color:#94A3B8;margin-bottom:20px;">
+        </div>
 
-Hola, somos
+        <hr style="margin:20px 0;border-color:rgba(255,255,255,.15)">
 
-</p>
+        <!-- REEMPLAZAR ENLACES -->
+        <small>GitHub • LinkedIn • Correo</small>
 
-<h1>
-Diego Mojica
-
-</h1>
-
-<h1 class="second">
-
-Juan Gonzales
-
-</h1>
-
-<p class="subtitle">
-
-Diseñamos soluciones que combinan programación, automatización, robótica y electrónica para crear proyectos con enfoque en Industria 4.0.
-
-</p>
-
-<div class="buttons">
-
-<a href="#proyectos" class="primary">
-
-Explorar proyectos →
-
-</a>
-
-<!-- REEMPLAZAR LINK DEL CV -->
-
-<a href="#" class="secondary">
-
-Descargar CV
-
-</a>
-
-</div>
-
-</div>
-
-<div class="side-panel">
-
-<h3>Equipo</h3>
-
-<div class="member">
-
-<div class="avatar">
-
-FOTO
-
-</div>
-
-<div>
-
-<strong>Diego Mojica</strong>
-
-<br>
-
-<small>Mecatrónica</small>
-
-</div>
-
-</div>
-
-<div class="member">
-
-<div class="avatar">
-
-FOTO
-
-</div>
-
-<div>
-
-<strong>Juan Gonzales</strong>
-
-<br>
-
-<small>Mecatrónica</small>
-
-</div>
-
-</div>
-
-<!-- REEMPLAZAR GITHUB -->
-
-<p style="margin-top:20px;color:#94A3B8;font-size:14px;">
-
-GitHub • LinkedIn • Correo
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
 </body>
-
 </html>
